@@ -58,22 +58,22 @@ PoseCore, kullanıcıların postür bozukluklarını gerçek zamanlı analiz ede
 * **Sprint Puanı:** 100 / 300
 * **Mantık:** Toplam proje 300 puan; her sprint için \~100 puan
 * **Story Points:** Her sprintte 100 puana ulaşmak için atanan 7 ana kanban kartına ait altgörevlere, ana görevde ulaşılmak üzere (roll up story points) ayrı ayrı puanmalar yapılmıştır.
-* 2 haftalık sprint sürecinde 5 takım üyesi için 10 günlük görev dağılımı "Sprint Görev Dağılımı ve Puan Mantığı Tablosu" nda yer almaktadır.
+* 2 haftalık sprint sürecinde 5 takım üyesi için 14 günlük görev dağılımı "Sprint Görev Dağılımı ve Puan Mantığı Tablosu" nda yer almaktadır.
 
 ###  Sprint Görev Dağılımı ve Puan Mantığı Tablosu
-| Ana Görev                     | Alt Görev                                                                 | Puan | Sorumlu Rol          | Gereken Süre | Açıklama                                                                 |
-|-------------------------------|---------------------------------------------------------------------------|------|----------------------|--------------|--------------------------------------------------------------------------|
-| **Araştırma & Planlama**      | Proje fikirleri araştırması                                               | 10   | Tüm ekip             | 0.5 gün      | Hızlı workshop + bireysel araştırma                                     |
-|                               | Kullanıcı persona oluşturma                                               | 5    | Product Owner        | 0.5 gün      | PO liderliğinde hazırlanması                                            |
-|                               | Kullanıcı görüşmeleri                                                     | 10   | PO + 1 Developer     | 1 gün        | Katılımcı bulma + 5 görüşme                                             |
-|                               | Teknoloji seçimi (Mediapipe/YOLO)                                         | 15   | 2 Developer          | 2 gün        | Prototip test + teknik rapor                                            |
-|                               | Başarı metriklerinin tanımlanması                                         | 10   | PO + Scrum Master    | 1 gün        | KPI'ların SMART prensibiyle belirlenmesi                                |
-| **Veri Toplama & Ön İşleme** | Doğru hareket videolarının kaydı                                          | 10   | 2 Developer          | 0.5 gün      | Senaryo başına 2 tekrar                                                 |
-|                               | Çoklu kamera veri seti                                                    | 15   | 3 Developer          | 1.5 gün      | 3 açı x 5 hareket (eşgüdüm gerektirir)                                 |
-|                               | Yanlış hareket senaryoları                                                | 10   | 1 Developer + PO     | 1 gün        | Hata senaryolarının klinik doğruluğu                                    |
-|                               | Veri etiketleme kuralları                                                 | 10   | 2 Developer          | 1 gün        | Landmark koordinatları için sınıflandırma protokolü                     |
-|                               | Koordinat normalizasyonu                                                  | 5    | 1 Developer          | 0.5 gün      | OpenPose/Mediapipe çıktılarının dönüşümü                               |
-| **Toplam**                    |                                                                           | 100  |                      | 10 gün       |                                                                          |
+| Ana Görev                     | Alt Görev                                                                 | Puan | Sorumlu Rol          | Açıklama                                                                |
+|-------------------------------|---------------------------------------------------------------------------|------|----------------------|-------------------------------------------------------------------------|
+| **Araştırma & Planlama**      | Proje fikirleri araştırması                                               | 10   | Tüm ekip             | Hızlı workshop + bireysel araştırma                                     |
+|                               | Kullanıcı persona oluşturma                                               | 5    | Product Owner        | PO liderliğinde hazırlanması                                            |
+|                               | Kullanıcı görüşmeleri                                                     | 10   | PO + 1 Developer     | Katılımcı bulma + 5 görüşme                                             |
+|                               | Teknoloji seçimi (Mediapipe/YOLO)                                         | 15   | 2 Developer          | Prototip test + teknik rapor                                            |
+|                               | Başarı metriklerinin tanımlanması                                         | 10   | PO + Scrum Master    | KPI'ların SMART prensibiyle belirlenmesi                                |
+| **Veri Toplama & Ön İşleme** | Doğru hareket videolarının kaydı                                           | 10   | 2 Developer          | Senaryo başına 2 tekrar                                                 |
+|                               | Çoklu kamera veri seti                                                    | 10   | 3 Developer          | 3 açı x 5 hareket (eşgüdüm gerektirir)                                  |
+|                               | Yanlış hareket senaryoları                                                | 10   | 1 Developer + PO     | Hata senaryolarının klinik doğruluğu                                    |
+|                               | Koordinat normalizasyonu                                                  | 10   | 1 Developer          | OpenPose/Mediapipe çıktılarının dönüşümü                                |
+|                               | Ham Video Verisinden CSV Üreten Script/Aracın Geliştirilmesi              | 10   | 1 Developer          | video verilerinden veriseti elde edilmesi                               |                                                        
+| **Toplam**                    |                                                                           | 100  |                      |                                                                         |
 
 ---
 
@@ -87,8 +87,15 @@ PoseCore, kullanıcıların postür bozukluklarını gerçek zamanlı analiz ede
 
 **ClickUp Proje Panosu:** [Buradan Ulaşabilirsiniz](https://clickup.com/)
 
-![image](https://github.com/user-attachments/assets/e804f883-ee40-4c6e-8b15-98abbc41acb3)
+![image](https://github.com/user-attachments/assets/f31ad366-bf1f-497d-8100-39f8fdd5e194)
 
+
+**ClickUp Proje Raporu ve Tamamlanan Sprint Puanı 
+![image](https://github.com/user-attachments/assets/c9620829-f56c-41d7-a9a7-5cbb06ce2ad2)
+* 100 puandan 50 puan tamamlanmıştır
+* Devam eden görevler sonraki sprinte devredelecektir.
+* Artı 10 puan model aşaması model geliştirme 1 e ait Mediapipe ile iskelet çıkarımı testi görevinden gelmiştir. Araştırma ve Planlama'ya katkısından dolayı bu sprintte denenmek istenmiştir. 
+  
 
 ###  Prototip Testleri
 
