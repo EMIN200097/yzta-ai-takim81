@@ -100,7 +100,7 @@ PoseCore, kullanıcıların postür bozukluklarını gerçek zamanlı analiz ede
 
 ## Veri Seti Toplama
 
-Bu dizin, projede kullanılacak veri setlerini toplamak, işlemek ve düzenlemek için kullanılan araçları içerir. Ham video verisini Makine Öğrenmesi modellerine beslemek ve doğru postür analizi yapmak için kullanılacak bu veriyi toplamayı burada gerçekleştiriyoruz.
+Bu dizin (dataset_gathering) , projede kullanılacak veri setlerini toplamak, işlemek ve düzenlemek için kullanılan araçları içerir. Ham video verisini Makine Öğrenmesi modellerine beslemek ve doğru postür analizi yapmak için kullanılacak bu veriyi toplamayı burada gerçekleştiriyoruz.
 
 ### İçerik
 
