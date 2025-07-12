@@ -14,8 +14,9 @@ import geo_engine
 
 class PoseLandmarkerWrapper:
 
-    def __init__(self, model_name='pose_landmarker.task', video_name=None):
+    def __init__(self, model_name='pose_landmarker.task', video_name=None, correct=True):
         self.script_dir = os.path.dirname(os.path.abspath(__file__))
+        self.input_correct = correct
 
         base_options = python.BaseOptions(model_asset_path=self.script_dir + '/' + 'models/' + model_name)
         options = vision.PoseLandmarkerOptions(
@@ -131,6 +132,7 @@ class PoseLandmarkerWrapper:
 
             # Calculate angles between the landmarks
             new_row = list()
+            new_row.append(self.input_correct)
             for j in range(len(landmarks_of_interest)-2):
                 new_row.append(
                     geo_engine.angle_between_points_cv2(
@@ -150,7 +152,7 @@ class PoseLandmarkerWrapper:
                     # Write header if file is empty
                     csvfile.seek(0, 2)
                     if csvfile.tell() == 0:
-                        writer.writerow(['shoulder', 'hip', 'ankle'])
+                        writer.writerow(['correct', 'shoulder', 'hip', 'ankle'])
                         
                     writer.writerow(new_row)
                     print(f"Logged angles: {new_row}")
@@ -170,7 +172,7 @@ class PoseLandmarkerWrapper:
                 break
 
 if __name__ == "__main__":
-    pose_landmarker = PoseLandmarkerWrapper(video_name='1.mp4')
+    pose_landmarker = PoseLandmarkerWrapper(video_name='1.mp4', correct=True)
 
     # Comment in and out the desired method to run since this is a demo
     # pose_landmarker.display_all_nodes_loop()
