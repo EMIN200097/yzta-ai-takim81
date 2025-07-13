@@ -10,13 +10,17 @@ import time
 import csv
 import os
 
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score
+
 import geo_engine
 
-class PoseLandmarkerWrapper:
+class MLPlayground:
 
-    def __init__(self, model_name='pose_landmarker.task', video_name=None, correct=True):
+    def __init__(self, model_name='pose_landmarker.task', video_name=None):
         self.script_dir = os.path.dirname(os.path.abspath(__file__))
-        self.input_correct = correct
 
         base_options = python.BaseOptions(model_asset_path=self.script_dir + '/' + 'models/' + model_name)
         options = vision.PoseLandmarkerOptions(
@@ -38,7 +42,29 @@ class PoseLandmarkerWrapper:
             self.input = cv2.VideoCapture(0)
         
         self.frame_shape = None  # Initialize frame shape to None
-    
+
+
+        ## ACTUAL ML STUFF
+        # Step 1: Load CSV
+        knn_df = pd.read_csv(self.script_dir + '/output/' + 'sitting_records.csv')  # Replace with your actual CSV path
+
+        # Step 2: Separate features and labels
+        knn_y = knn_df.iloc[:, 0]    # Label is the first column
+        knn_X = knn_df.iloc[:, 1:]   # Features are the rest
+
+        # Step 3: Split the dataset
+        X_train, X_test, y_train, y_test = train_test_split(knn_X, knn_y, test_size=0.2, random_state=42)
+
+        # Step 4: Train KNN
+        self.knn = KNeighborsClassifier(n_neighbors=3)
+        self.knn.fit(X_train, y_train)
+
+        # Step 5: Predict and evaluate
+        y_pred = self.knn.predict(X_test)
+        accuracy = accuracy_score(y_test, y_pred)
+
+        print("KNN Accuracy (training data):", accuracy)
+
     def process_frame(self, image: cv2.typing.MatLike):
 
         if self.frame_shape is None:
@@ -63,7 +89,7 @@ class PoseLandmarkerWrapper:
             return landmarks
         else:
             return None
-    
+
     def display_all_nodes_loop(self):
         
         while self.input.isOpened():
@@ -83,11 +109,8 @@ class PoseLandmarkerWrapper:
 
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
-    
+
     def process_sitting(self):
-        # This method calculates the sitting position based on the landmarks
-        # 'log' is a boolean to control whether to log the results to the csv file to be used for training.
-        log = False # TBC by the user in runtime
 
         # Define the indexes of the landmarks we are interested in
         desired_indexes = [7,8,11,12,23,24,25,26,27,28]
@@ -135,7 +158,6 @@ class PoseLandmarkerWrapper:
 
             # Calculate angles between the landmarks
             new_row = list()
-            new_row.append(self.input_correct)
             for j in range(len(landmarks_of_interest)-2):
                 new_row.append(
                     geo_engine.angle_between_points_cv2(
@@ -144,39 +166,20 @@ class PoseLandmarkerWrapper:
                         (landmarks_of_interest[j + 2].x, landmarks_of_interest[j + 2].y)
                     )
                 )
-            
-            # If logging is enabled, append to the CSV file
-            # Since we have 5 landmarks we can account for 3 angles
-            # This is a very inefficient way to do it, but it will do for local testing & gathering schenanigans
-            if log:
-                with open(self.script_dir + '/' + 'output/sitting_records.csv', 'a', newline='') as csvfile:
-                    writer = csv.writer(csvfile)
-            
-                    # Write header if file is empty
-                    csvfile.seek(0, 2)
-                    if csvfile.tell() == 0:
-                        writer.writerow(['correct', 'shoulder', 'hip', 'ankle'])
-                        
-                    writer.writerow(new_row)
-                    print(f"Logged angles: {new_row}")
+            column_names = ['shoulder', 'hip', 'ankle']
+            this_frame_df = pd.DataFrame([new_row], columns=column_names)
+            print(self.knn.predict(this_frame_df))
 
             cv2.imshow('Pose Landmarker', image)
             
             key = cv2.waitKey(1) & 0xFF
 
-            if key == ord('l'):
-                log = not log
-                if log:
-                    print("Logging enabled. Angles will be saved to output/sitting_records.csv")
-                else:
-                    print("Logging disabled. Angles will not be saved.")
-
-            elif key == ord('q'):
+            if key == ord('q'):
                 break
 
-if __name__ == "__main__":
-    pose_landmarker = PoseLandmarkerWrapper(video_name='sitting_bad.mp4', correct=False)
 
-    # Comment in and out the desired method to run since this is a demo
-    # pose_landmarker.display_all_nodes_loop()
-    pose_landmarker.process_sitting()
+if __name__ == "__main__":
+    ml_playground = MLPlayground()
+
+    ml_playground.process_sitting()
+
