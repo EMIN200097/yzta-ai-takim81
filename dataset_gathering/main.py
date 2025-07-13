@@ -110,6 +110,9 @@ class PoseLandmarkerWrapper:
 
             landmarks_of_interest = list()
 
+            if landmarks == None:
+                continue
+
             for i, landmark in enumerate(landmarks):
                 if i not in desired_indexes:
                     continue
@@ -172,7 +175,7 @@ class PoseLandmarkerWrapper:
                 break
 
 if __name__ == "__main__":
-    pose_landmarker = PoseLandmarkerWrapper(video_name='1.mp4', correct=True)
+    pose_landmarker = PoseLandmarkerWrapper(video_name='sitting_good.mp4', correct=True)
 
     # Comment in and out the desired method to run since this is a demo
     # pose_landmarker.display_all_nodes_loop()
