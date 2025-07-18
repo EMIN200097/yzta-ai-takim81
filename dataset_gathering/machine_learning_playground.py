@@ -13,7 +13,12 @@ import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.tree import DecisionTreeRegressor, ExtraTreeRegressor
 from sklearn.metrics import accuracy_score
+
+from tslearn.metrics import dtw
+from collections import deque
 
 import geo_engine
 
@@ -44,26 +49,49 @@ class MLPlayground:
         self.frame_shape = None  # Initialize frame shape to None
 
 
-        ## ACTUAL ML STUFF
+        ## ACTUAL ML STUFF FOR SITTING
         # Step 1: Load CSV
-        knn_df = pd.read_csv(self.script_dir + '/output/' + 'sitting_records.csv')  # Replace with your actual CSV path
-
+        sitting_df = pd.read_csv(self.script_dir + '/output/' + 'sitting_records.csv')  # Replace with your actual CSV path
+    
         # Step 2: Separate features and labels
-        knn_y = knn_df.iloc[:, 0]    # Label is the first column
-        knn_X = knn_df.iloc[:, 1:]   # Features are the rest
+        sitting_y = sitting_df.iloc[:, 0]    # Label is the first column
+        sitting_X = sitting_df.iloc[:, 1:]   # Features are the rest
 
         # Step 3: Split the dataset
-        X_train, X_test, y_train, y_test = train_test_split(knn_X, knn_y, test_size=0.2, random_state=42)
+        sitting_X_train, sitting_X_test, sitting_y_train, sitting_y_test = train_test_split(sitting_X, sitting_y, test_size=0.2, random_state=42)
 
         # Step 4: Train KNN
-        self.knn = KNeighborsClassifier(n_neighbors=3)
-        self.knn.fit(X_train, y_train)
+        self.sitting_knn = KNeighborsClassifier(n_neighbors=3)
+        self.sitting_knn.fit(sitting_X_train, sitting_y_train)
 
         # Step 5: Predict and evaluate
-        y_pred = self.knn.predict(X_test)
-        accuracy = accuracy_score(y_test, y_pred)
+        y_pred = self.sitting_knn.predict(sitting_X_test)
+        accuracy = accuracy_score(sitting_y_test, y_pred)
 
-        print("KNN Accuracy (training data):", accuracy)
+        print("KNN Sitting Accuracy (training data):", accuracy)
+
+        ## ACTUAL ML STUFF FOR SQUATTING
+        # Step 1: Load CSV
+        squat_df = pd.read_csv(self.script_dir + '/output/' + 'squat_records.csv')  # Replace with your actual CSV path
+
+
+
+        # Step 2: Separate features and labels
+        squat_y = squat_df.iloc[:, 0]    # Label is the first column
+        squat_X = squat_df.iloc[:, 1:]   # Features are the rest
+        self.squat_ref = squat_X
+
+        # Step 3: Split the dataset
+        squat_X_train, squat_X_test, squat_y_train, squat_y_test = train_test_split(squat_X, squat_y, test_size=0.2, random_state=42)
+
+        # Step 4: Train KNN
+        self.squat_rfr = RandomForestRegressor(n_estimators=100)
+        self.squat_rfr.fit(squat_X_train, squat_y_train)
+        self.squat_queue = deque(maxlen=100)
+    
+    def squat_avg(self, new_val):
+        self.squat_queue.append(new_val)
+        return sum(self.squat_queue) / len(self.squat_queue)
 
     def process_frame(self, image: cv2.typing.MatLike):
 
@@ -168,7 +196,75 @@ class MLPlayground:
                 )
             column_names = ['shoulder', 'hip', 'ankle']
             this_frame_df = pd.DataFrame([new_row], columns=column_names)
-            print(self.knn.predict(this_frame_df))
+            print(self.sitting_knn.predict(this_frame_df))
+
+            cv2.imshow('Pose Landmarker', image)
+            
+            key = cv2.waitKey(1) & 0xFF
+
+            if key == ord('q'):
+                break
+
+
+    def process_squatting(self):
+        
+        # Define the indexes of the landmarks we are interested in
+        desired_indexes = [7,8,11,12,23,24,25,26,27,28]
+        left_indexes = [7, 11, 23, 25, 27]
+        right_indexes = [8, 12, 24, 26, 28]
+
+        while self.input.isOpened():
+
+            success, image = self.input.read()
+            if not success:
+                assert False, "Failed to read frame from input"
+
+            landmarks = self.process_frame(image=image)
+
+            # Pick the best side based on the visibility of the landmarks
+            left_direction_score = 0
+            left_direction_landmarks = list()
+            right_direction_score = 0
+            right_direction_landmarks = list()
+
+            landmarks_of_interest = list()
+
+            if landmarks == None:
+                continue
+
+            for i, landmark in enumerate(landmarks):
+                if i not in desired_indexes:
+                    continue
+                if i in left_indexes:
+                    left_direction_score += landmark.visibility
+                    left_direction_landmarks.append(landmark)
+                elif i in right_indexes:
+                    right_direction_score += landmark.visibility
+                    right_direction_landmarks.append(landmark)
+
+            if left_direction_score > right_direction_score:
+                landmarks_of_interest = left_direction_landmarks
+            else:
+                landmarks_of_interest = right_direction_landmarks
+
+            for landmark in landmarks_of_interest:
+                cx = int(landmark.x * self.frame_shape[1])
+                cy = int(landmark.y * self.frame_shape[0])
+                cv2.circle(image, (cx, cy), 5, (0, 255, 0), -1)
+
+            # Calculate angles between the landmarks
+            new_row = list()
+            for j in range(len(landmarks_of_interest)-2):
+                new_row.append(
+                    geo_engine.angle_between_points_cv2(
+                        (landmarks_of_interest[j].x, landmarks_of_interest[j].y),
+                        (landmarks_of_interest[j + 1].x, landmarks_of_interest[j + 1].y),
+                        (landmarks_of_interest[j + 2].x, landmarks_of_interest[j + 2].y)
+                    )
+                )
+            column_names = ['shoulder', 'hip', 'ankle']
+            this_frame_df = pd.DataFrame([new_row], columns=column_names)
+            print(self.squat_avg(dtw(this_frame_df.to_numpy(), self.squat_ref.to_numpy())))
 
             cv2.imshow('Pose Landmarker', image)
             
@@ -181,5 +277,6 @@ class MLPlayground:
 if __name__ == "__main__":
     ml_playground = MLPlayground()
 
-    ml_playground.process_sitting()
+    # ml_playground.process_sitting()
+    ml_playground.process_squatting()
 

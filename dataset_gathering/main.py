@@ -149,7 +149,7 @@ class PoseLandmarkerWrapper:
             # Since we have 5 landmarks we can account for 3 angles
             # This is a very inefficient way to do it, but it will do for local testing & gathering schenanigans
             if log:
-                with open(self.script_dir + '/' + 'output/sitting_records.csv', 'a', newline='') as csvfile:
+                with open(self.script_dir + '/' + 'output/squat_records.csv', 'a', newline='') as csvfile:
                     writer = csv.writer(csvfile)
             
                     # Write header if file is empty
@@ -175,7 +175,7 @@ class PoseLandmarkerWrapper:
                 break
 
 if __name__ == "__main__":
-    pose_landmarker = PoseLandmarkerWrapper(video_name='sitting_bad.mp4', correct=False)
+    pose_landmarker = PoseLandmarkerWrapper(video_name='squat.mp4', correct=True)
 
     # Comment in and out the desired method to run since this is a demo
     # pose_landmarker.display_all_nodes_loop()
