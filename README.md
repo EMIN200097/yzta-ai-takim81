@@ -161,4 +161,334 @@ Başka düzenleme veya eklemek istediğin detay varsa iletebilirsin!
 
 </details>
 
+## Sprint 2 (7 Temmuz - 20 Temmuz 2025  )
+<details>
+<summary>Tıklayarak Detayları Göster/Gizle</summary>
 
+**Sprint Süresi:** 2 hafta  
+**Takım:** Coreteam  
+
+---
+
+<details>
+<summary>📊 Sprint 2 Özet</summary>
+
+## Sprint Hedefleri
+
+Sprint 2'de ana hedefimiz, Sprint 1'de oluşturduğumuz temel yapı üzerine model geliştirme, veri toplama ve kullanıcı arayüzü çalışmalarını tamamlamaktı.
+
+**Hedef Sprint Puanı:** 100/300  
+**Gerçekleşen Sprint Puanı:** 68/100 (%68)
+
+</details>
+
+---
+
+<details>
+<summary>🎯 Sprint Notları</summary>
+
+## Sprint İçinde Tamamlanması Tahmin Edilen Puan
+**100 puan** - Bütün proje 300 puan olarak planlandı ve Sprint 2'de 100 puan tamamlanması hedeflendi.
+
+## Tahmin Mantığı
+Sprint 2'de ana odak noktaları:
+- Model geliştirme ve optimizasyon çalışmaları (30 puan)
+- Kapsamlı veri toplama ve ön işleme (25 puan) 
+- Araştırma ve uzman görüşü alma (20 puan)
+- Yapay zeka algoritma iyileştirmeleri (15 puan)
+- Frontend/UI geliştirme (10 puan)
+
+**Toplam:** 100 puan hedeflenmiş, 74 puan başarıyla tamamlanmıştır.
+
+## Sprint Puanlama Sistemi ve Görev Dağılımı
+
+### Kategori Bazlı Puanlama Tablosu
+
+| Kategori | Hedef Puan | Tamamlanan Puan | Tamamlanma (%) | Rol Dağılımı |
+|----------|------------|-----------------|----------------|---------------|
+| **Araştırma & Planlama** | 20 | 20 | 100% | Esra (Dev), Meltem (SM),Mehmet Emin (Dev) |
+| **Veri Toplama & Ön İşleme** | 25 | 20 | 80% | Esra (Dev), Berke (Dev), Meltem (SM) |
+| **Model Geliştirme** | 30 | 21 | 70% | Esra (Dev), Berke (Dev), Meltem (SM) |
+| **Yapay Zeka Tarafı** | 15 | 0 | 0% | Mehmet Emin (Dev), Ahmet (PO), Berke (Dev) |
+| **Frontend & UX/UI** | 10 | 7 | 70% | Esra (Dev), Ahmet (PO), Meltem (SM) |
+| **TOPLAM** | **100** | **68** | **68%** | **Tüm Takım** |
+
+
+
+</details>
+
+---
+
+<details>
+<summary>💬 Daily Scrum</summary>
+
+## Daily Scrum Süreci
+
+**Zaman:** Her akşam 20:00-21:30 arası  
+**Kanallar:** WhatsApp grup mesajları, Google Meet toplantıları  
+**Sıklık:** Günlük WhatsApp güncellemeleri, haftada 2-3 Google Meet
+
+### WhatsApp Daily Scrum Konuşmaları
+Sprint 2 boyunca takım üyeleri arasında gerçekleşen günlük iletişim ve proje güncellemeleri:
+[📱 WhatsApp Daily Scrum Ekran Görüntüleri](https://imgur.com/a/sprint-2-whatsapp-screenshots-qDiVlZH)
+
+### Ana İletişim Konuları:
+- Model geliştirme ilerlemeleri 
+- Veri seti araştırması güncellemeleri 
+- UI/UX geliştirme durumu 
+- Proje koordinasyonu 
+- Teknik destek ve kod review 
+
+### Toplantı Tarihleri:
+- **8 Temmuz:** Sprint planlama ve görev dağılımı
+- **12 Temmuz:** Haftalık ilerleme değerlendirmesi  
+- **15 Temmuz:** Veri seti seçimi ve model karşılaştırması
+- **18 Temmuz:** Sprint review hazırlığı
+
+</details>
+
+---
+
+<details>
+<summary>📋 Sprint Board Updates</summary>
+
+## ClickUp Sprint Board
+
+Sprint 2 görev dağılımı, ilerleme durumu ve proje yönetimi paneli:
+[📊 ClickUp Sprint 2 Board](https://app.clickup.com/90181399415/v/li/901809372434)
+
+### Sprint Burndown:
+- Başlangıç: 100 puan
+- Tamamlanan: 68 puan
+- Kalan: 32 puan (Sprint 3'e aktarıldı)
+
+</details>
+
+---
+
+<details>
+<summary>🖥️ Ürün Durumu</summary>
+
+## Sprint 2 Geliştirme Çıktıları
+
+### 1. Model Geliştirme İyileştirmeleri
+
+**Classifier vs Regression Karşılaştırması:**
+```python
+# Geliştirilmiş sınıflandırıcı modeli
+- Doğru/yanlış postür sınıflandırması
+- Threshold ayarlama mekanizması
+- Çoklu egzersiz desteği
+- Modüler veri pipeline
+```
+
+**Başarılar:**
+- MediaPipe entegrasyonu optimize edildi
+- Açı hesaplama algoritması geliştirildi
+- CSV export özelliği eklendi
+- Real-time işleme test edildi
+
+### 2. Demo - Postür Puanlama Modeli
+
+Sprint 2'de geliştirilen postür analizi ve puanlama sisteminin çalışır halinin demonstrasyonu:
+
+**Model Demo Özellikleri:**
+- Real-time kamera görüntü işleme
+- Mediapipe ile iskelet noktası tespiti
+- Oturma postürü açı hesaplaması
+- Anlık puanlama ve geri bildirim sistemi
+
+*Demo ekran görüntüleri ve video için aşağıya eklenecek:*
+```
+- Squat pozisyonu analizi
+- Açı hesaplama sonuçları
+- Real-time feedback sistemi
+- Puanlama algoritması çıktıları
+```
+
+### 3. Kullanıcı Arayüzü Geliştirmeleri
+
+**Flutter Mobil Uygulama:**
+- Temel ekran tasarımları tamamlandı
+- MediaPipe kamera entegrasyonu test edildi
+- Figma prototipi oluşturuldu
+- Kullanıcı akışı belirlendi
+
+</details>
+
+---
+
+<details>
+<summary>🎨 UI/UX Geliştirme ve Testler</summary>
+
+## Kullanıcı Arayüzü Çalışmaları
+
+### Flutter Mobil Uygulama Prototipleri
+
+Sprint 2 boyunca geliştirilen kullanıcı arayüzü tasarımları ve test sonuçları:
+
+**UI/UX Demo Alanı:**
+
+![WhatsApp Görsel 2025-07-18 saat 12 34 42_a26d09e1](https://github.com/user-attachments/assets/d066964d-1ddf-450b-9662-1051caf4ffef)
+
+
+
+### MediaPipe UI Entegrasyon Testleri:
+- ✅ Real-time kamera görüntü işleme başarılı
+- ✅ Iskelet noktası görselleştirmesi çalışıyor
+- ✅ Kullanıcı arayüzü responsive tasarım
+- ✅ Kamera açısı optimizasyonu test edildi
+
+### Figma ve Prototipleme Çalışmaları:
+- Kullanıcı akış şemaları oluşturuldu
+- Wireframe tasarımları tamamlandı
+- Rocket.new platformu ile entegrasyon test edildi
+- Color palette ve typography belirlendi
+
+### Kullanıcı Deneyimi İyileştirmeleri:
+- Onboarding sürecini sadeleştirme
+- Kamera yerleştirme rehberi
+- Gerçek zamanlı geri bildirim sistemi
+- Erişilebilirlik standartları uygulaması
+
+</details>
+
+---
+
+<details>
+<summary>📈 Sprint Review</summary>
+
+## Sprint 2'de Yapılan İşler
+<img width="895" height="737" alt="image" src="https://github.com/user-attachments/assets/bed4fcd2-2b62-43ba-b561-6815a5e8ce9b" />
+
+
+*Sprint 2 Backlog Items Ekran Görüntüsü*
+
+<img width="1859" height="704" alt="image" src="https://github.com/user-attachments/assets/7b3a72ae-9f11-44b8-b1d8-91191c4034c8" />
+
+*Sprint 2 Sprint Dashboard Ekran Görüntüsü*
+
+### ✅ Başarıyla Tamamlanan Görevler:
+
+#### Araştırma & Planlama 
+- ✅ Kapsamlı veri setleri araştırılması ve derlenmesi
+- ✅ Egzersiz türleri belirlenmesi (seated leg raise, bridge, omuz egzersizleri)
+- ✅ Fizyoterapist uzman görüşü alınması
+- ✅ Pratik kullanım senaryoları belirlenmesi
+
+#### Model Geliştirme 
+- ✅ Gelişmiş classifier modeli geliştirme
+- ✅ Regresyon vs Classification karşılaştırması
+- ✅ Threshold ayarlama mekanizması
+- ✅ Veri toplama pipeline iyileştirmesi
+- ✅ Çoklu egzersiz desteği eklenmesi
+- 🔄 Threshold fine-tuning (devam ediyor)
+
+#### Frontend & UX/UI 
+- ✅ Flutter mobil uygulama prototipi
+- ✅ MediaPipe UI entegrasyonu testi
+- ✅ Figma/Rocket.new deneyimi
+- ✅ UX/UI testleri
+
+### 🔄 Devam Eden Görevler:
+
+#### Veri Toplama & Ön İşleme
+- 🔄 Seçili egzersizler için video kayıtları
+- 🔄 Farklı kamera açılarından veri toplama
+- 🔄 Veri etiketleme süreci
+
+#### Yapay Zeka Optimizasyonu 
+- 🔄 Pose estimation algoritması iyileştirmesi
+- 🔄 Gerçek zamanlı tahmin sistemi kurulumu
+- ❌ Feedback mekanizması (Sprint 3'e ertelendi)
+
+### Sprint Katılımcıları:
+- **Meltem Kartopu** (Scrum Master) - Aktif
+- **Berke Sinan Yetkin** (Developer) - Aktif  
+- **Ahmet Reşat Keyan** (Product Owner) - Aktif
+- **Esra Öden** (Developer) - Aktif
+- **Mehmet Emin Şahin** (Developer) - Aktif
+
+</details>
+
+---
+
+<details>
+<summary>🔄 Sprint Retrospective</summary>
+
+## Bu Sprintte Yaptığımız En İyi Şeyler
+
+### 👍 Başarılı Yönler:
+- **Kapsamlı Araştırma:** Veri seti araştırması ve uzman görüşü alma süreci çok verimli geçti
+- **Teknik İlerleme:** Model geliştirme alanında büyük adımlar atıldı 
+- **İletişim:** WhatsApp ve Google Meet kombinasyonu ile etkili takım iletişimi sağlandı
+- **Prototipleme:** UI/UX testleri başarıyla tamamlandı, kullanıcı deneyimi şekillenmeye başladı
+- **Uzman Danışmanlığı:** Fizyoterapist görüşü alınarak proje gerçek ihtiyaçlara yönlendirildi
+
+### 📌 Geliştirilmesi Gerekenler:
+- **Veri Toplama:** Video kayıt süreci beklenenden daha uzun sürdü 
+- **Zaman Yönetimi:** Bazı görevlerde öngörülen süreler aşıldı
+- **AI Optimizasyonu:** Yapay zeka iyileştirmeleri gecikmiş durumda 
+- **Entegrasyon:** Backend-frontend entegrasyonu Sprint 3'e ertelendi
+
+### 🎯 Sprint 3 İçin Aksiyon Planı:
+1. **Veri toplama** sürecini hızlandırmak için görev dağılımı yapılacak
+2. **Backend API** geliştirmesi önceliklendirilecek
+3. **Entegrasyon testleri** için daha fazla zaman ayrılacak
+4. **Kullanıcı testleri** için pilot grup oluşturulacak
+
+### 📊 Sprint Başarı Metrikleri:
+- **Genel Tamamlanma:** %68 (68/100 puan)
+- **Takım Katılımı:** %100 (tüm üyeler aktif)
+- **Kod Kalitesi:** Yüksek (code review süreçleri takip edildi)
+- **Dokümantasyon:** İyi (README ve commit mesajları düzenli)
+
+</details>
+
+---
+
+<details>
+<summary>🚀 Sprint 3'e Hazırlık</summary>
+
+## Sprint 3 Planlaması
+
+**Aktarılan Görevler (21 puan):**
+- Veri toplama sürecinin tamamlanması (9 puan)
+- AI algoritma optimizasyonları (9 puan)  
+- Backend-frontend entegrasyonu (3 puan)
+
+**Yeni Sprint 3 Hedefleri:**
+- Entegrasyon ve test süreçleri
+- Kullanıcı deneyimi iyileştirmeleri
+- Performance optimizasyonu
+- Pilot kullanıcı testleri
+
+### Sprint 3 Odak Alanları:
+
+#### 🔧 Backend & Entegrasyon (30 puan)
+- REST API geliştirme
+- Model deployment
+- Flutter-Backend entegrasyonu
+- Real-time işleme optimizasyonu
+
+#### 🧪 Test & Doğrulama (25 puan)
+- Gerçek kullanıcı testleri
+- Performans testleri
+- Çoklu cihaz uyumluluğu
+- End-to-end test süreçleri
+
+#### 📱 Kullanıcı Deneyimi (20 puan)
+- UI/UX iyileştirmeleri
+- Onboarding sürecini geliştirme
+- Accessibility standartları
+- Kullanıcı geri bildirim sistemi
+
+#### 🚀 Production Hazırlık (25 puan)
+- Model optimizasyonu
+- Deployment stratejisi
+- Dokümantasyon tamamlama
+- Beta test programı
+
+**Toplam Sprint 3 Hedefi:** 100 puan
+
+</details>
