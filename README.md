@@ -237,7 +237,7 @@ Sprint 2 boyunca takım üyeleri arasında gerçekleşen günlük iletişim ve p
 - Veri seti araştırması güncellemeleri 
 - UI/UX geliştirme durumu 
 - Proje koordinasyonu 
-- Teknik destek ve kod review 
+- kod review 
 
 ### Toplantı Tarihleri:
 - **8 Temmuz:** Sprint planlama ve görev dağılımı
@@ -274,15 +274,7 @@ Sprint 2 görev dağılımı, ilerleme durumu ve proje yönetimi paneli:
 ### 1. Model Geliştirme İyileştirmeleri
 
 **Classifier vs Regression Karşılaştırması:**
-```python
-# Geliştirilmiş sınıflandırıcı modeli
-- Doğru/yanlış postür sınıflandırması
-- Threshold ayarlama mekanizması
-- Çoklu egzersiz desteği
-- Modüler veri pipeline
-```
 
-**Başarılar:**
 - MediaPipe entegrasyonu optimize edildi
 - Açı hesaplama algoritması geliştirildi
 - CSV export özelliği eklendi
@@ -291,28 +283,34 @@ Sprint 2 görev dağılımı, ilerleme durumu ve proje yönetimi paneli:
 ### 2. Demo - Postür Puanlama Modeli
 
 Sprint 2'de geliştirilen postür analizi ve puanlama sisteminin çalışır halinin demonstrasyonu:
+<img src="https://github.com/user-attachments/assets/9a0fa282-03c1-444c-bf1a-3520fd0f316a" width="600" />
+
+*3000-0 Arası Squad puanlama Ekran Görüntüsü*
 
 **Model Demo Özellikleri:**
 - Real-time kamera görüntü işleme
 - Mediapipe ile iskelet noktası tespiti
-- Oturma postürü açı hesaplaması
-- Anlık puanlama ve geri bildirim sistemi
-
-*Demo ekran görüntüleri ve video için aşağıya eklenecek:*
-```
-- Squat pozisyonu analizi
-- Açı hesaplama sonuçları
-- Real-time feedback sistemi
-- Puanlama algoritması çıktıları
-```
+- Squad postürü açı hesaplaması
+- Anlık puanlama (3000 den 0'a yaklaşarak ideal squad postürüne ulaşma hedeflendi)
+**Eklenecekler:**
+- Farklı hastalık gruplarına ait hareketler eklenecek ( temelde 5 hareket planladı)
+- Puanlama mekanizması sadeleştirilecek (Threshold eşikleri belirlenerek skorlama ölçeklendirilecek)  
 
 ### 3. Kullanıcı Arayüzü Geliştirmeleri
+<img src="https://github.com/user-attachments/assets/4d33074c-f840-4495-b496-090b24e3d3eb" width="300" />
+
+<img src="https://github.com/user-attachments/assets/e9d261a3-5381-491f-869b-c92dc2c2fa0f" width="300" />
+
+[Flutter mobil uygulaması ön deneme](https://preview.builtwithrocket.new/posecore-9w5bo42)
+
 
 **Flutter Mobil Uygulama:**
 - Temel ekran tasarımları tamamlandı
 - MediaPipe kamera entegrasyonu test edildi
 - Figma prototipi oluşturuldu
 - Kullanıcı akışı belirlendi
+iyileştirilecekler: 
+- Uygulama içi font hataları düzeltilecek
 
 </details>
 
@@ -361,8 +359,11 @@ Sprint 2 boyunca geliştirilen kullanıcı arayüzü tasarımları ve test sonu�
 ## Sprint 2'de Yapılan İşler
 <img width="895" height="737" alt="image" src="https://github.com/user-attachments/assets/bed4fcd2-2b62-43ba-b561-6815a5e8ce9b" />
 
-
 *Sprint 2 Backlog Items Ekran Görüntüsü*
+<img width="1369" height="573" alt="image" src="https://github.com/user-attachments/assets/04f3b9ad-1c7e-4962-9ca1-29805f12a31c" />
+
+*Sprint 2 Sprint Board Ekran Görüntüsü*
+
 
 <img width="1859" height="704" alt="image" src="https://github.com/user-attachments/assets/7b3a72ae-9f11-44b8-b1d8-91191c4034c8" />
 
@@ -430,6 +431,7 @@ Sprint 2 boyunca geliştirilen kullanıcı arayüzü tasarımları ve test sonu�
 - **Zaman Yönetimi:** Bazı görevlerde öngörülen süreler aşıldı
 - **AI Optimizasyonu:** Yapay zeka iyileştirmeleri gecikmiş durumda 
 - **Entegrasyon:** Backend-frontend entegrasyonu Sprint 3'e ertelendi
+- **UI/UX** Flutterda UI tarafın iyileştirilmesi 
 
 ### 🎯 Sprint 3 İçin Aksiyon Planı:
 1. **Veri toplama** sürecini hızlandırmak için görev dağılımı yapılacak
