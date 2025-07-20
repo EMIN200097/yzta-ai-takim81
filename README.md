@@ -198,7 +198,7 @@ Sprint 2'de ana odak noktaları:
 - Yapay zeka algoritma iyileştirmeleri (15 puan)
 - Frontend/UI geliştirme (10 puan)
 
-**Toplam:** 100 puan hedeflenmiş, 74 puan başarıyla tamamlanmıştır.
+**Toplam:** 100 puan hedeflenmiş, 68 puan başarıyla tamamlanmıştır.
 
 ## Sprint Puanlama Sistemi ve Görev Dağılımı
 
