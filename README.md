@@ -178,7 +178,7 @@ Başka düzenleme veya eklemek istediğin detay varsa iletebilirsin!
 Sprint 2'de ana hedefimiz, Sprint 1'de oluşturduğumuz temel yapı üzerine model geliştirme, veri toplama ve kullanıcı arayüzü çalışmalarını tamamlamaktı.
 
 **Hedef Sprint Puanı:** 100/300  
-**Gerçekleşen Sprint Puanı:** 68/100 (%68)
+**Gerçekleşen Sprint Puanı:** 74/100 (%74)
 
 </details>
 
@@ -187,6 +187,12 @@ Sprint 2'de ana hedefimiz, Sprint 1'de oluşturduğumuz temel yapı üzerine mod
 <details>
 <summary>🎯 Sprint Notları</summary>
 
+  ### Sprint Katılımcıları:
+- **Meltem Kartopu** (Scrum Master) - Aktif
+- **Berke Sinan Yetkin** (Developer) - Aktif  
+- **Ahmet Reşat Keyan** (Product Owner) - Aktif
+- **Esra Öden** (Developer) - Aktif
+- **Mehmet Emin Şahin** (Developer) - Aktif
 ## Sprint İçinde Tamamlanması Tahmin Edilen Puan
 **100 puan** - Bütün proje 300 puan olarak planlandı ve Sprint 2'de 100 puan tamamlanması hedeflendi.
 
@@ -198,7 +204,7 @@ Sprint 2'de ana odak noktaları:
 - Yapay zeka algoritma iyileştirmeleri (15 puan)
 - Frontend/UI geliştirme (10 puan)
 
-**Toplam:** 100 puan hedeflenmiş, 68 puan başarıyla tamamlanmıştır.
+**Toplam:** 100 puan hedeflenmiş, 74 puan başarıyla tamamlanmıştır.
 
 ## Sprint Puanlama Sistemi ve Görev Dağılımı
 
@@ -209,9 +215,9 @@ Sprint 2'de ana odak noktaları:
 | **Araştırma & Planlama** | 20 | 20 | 100% | Esra (Dev), Meltem (SM),Mehmet Emin (Dev) |
 | **Veri Toplama & Ön İşleme** | 25 | 20 | 80% | Esra (Dev), Berke (Dev), Meltem (SM) |
 | **Model Geliştirme** | 30 | 21 | 70% | Esra (Dev), Berke (Dev), Meltem (SM) |
-| **Yapay Zeka Tarafı** | 15 | 0 | 0% | Mehmet Emin (Dev), Ahmet (PO), Berke (Dev) |
+| **Yapay Zeka Tarafı** | 15 | 6 | 40% | Mehmet Emin (Dev), Ahmet (PO), Berke (Dev) |
 | **Frontend & UX/UI** | 10 | 7 | 70% | Esra (Dev), Ahmet (PO), Meltem (SM) |
-| **TOPLAM** | **100** | **68** | **68%** | **Tüm Takım** |
+| **TOPLAM** | **100** | **74** | **74%** | **Tüm Takım** |
 
 
 
@@ -255,13 +261,33 @@ Sprint 2 boyunca takım üyeleri arasında gerçekleşen günlük iletişim ve p
 ## ClickUp Sprint Board
 
 Sprint 2 görev dağılımı, ilerleme durumu ve proje yönetimi paneli:
-[📊 ClickUp Sprint 2 Board](https://app.clickup.com/90181399415/v/li/901809372434)
+[📊 ClickUp Sprint 2 Board](https://app.clickup.com/90181399415/v/li/901809374434)
 
 ### Sprint Burndown:
 - Başlangıç: 100 puan
-- Tamamlanan: 68 puan
-- Kalan: 32 puan (Sprint 3'e aktarıldı)
+- Tamamlanan: 74 puan
+- Kalan: 26 puan (Sprint 3'e aktarıldı)
+<img width="1051" height="683" alt="image" src="https://github.com/user-attachments/assets/9a4645e7-09fb-474a-8f29-c44b8faf19a9" />
 
+
+
+*Sprint 2 Backlog Items Ekran Görüntüsü*
+
+
+<img width="1130" height="425" alt="image" src="https://github.com/user-attachments/assets/49ec5456-660c-4afa-9a82-a6d36af642b3" />
+
+
+
+
+
+*Sprint 2 Sprint Board Ekran Görüntüsü*
+
+
+<img width="1855" height="744" alt="image" src="https://github.com/user-attachments/assets/fa1ff1bd-1c83-46ea-abaf-f6e8e426a3f6" />
+
+
+
+*Sprint 2 Sprint Dashboard Ekran Görüntüsü*
 </details>
 
 ---
@@ -273,14 +299,21 @@ Sprint 2 görev dağılımı, ilerleme durumu ve proje yönetimi paneli:
 
 ### 1. Model Geliştirme İyileştirmeleri
 
-**Classifier vs Regression Karşılaştırması:**
+  
+####  Oturuş Pozisyonu İçin İkili (Binary) Değerlendirme Modeli
+
+<img src="https://github.com/user-attachments/assets/7e4a673f-b0ac-4bd5-99b8-71d71b2dc0ac" height="400" />
+
+
+
+*Oturma Pozisyonu için True False Geri Bildirimi*
 
 - MediaPipe entegrasyonu optimize edildi
 - Açı hesaplama algoritması geliştirildi
 - CSV export özelliği eklendi
 - Real-time işleme test edildi
 
-### 2. Demo - Postür Puanlama Modeli
+####  Squad puanlama Modeli
 
 Sprint 2'de geliştirilen postür analizi ve puanlama sisteminin çalışır halinin demonstrasyonu:
 <img src="https://github.com/user-attachments/assets/9a0fa282-03c1-444c-bf1a-3520fd0f316a" width="600" />
@@ -296,7 +329,7 @@ Sprint 2'de geliştirilen postür analizi ve puanlama sisteminin çalışır hal
 - Farklı hastalık gruplarına ait hareketler eklenecek ( temelde 5 hareket planladı)
 - Puanlama mekanizması sadeleştirilecek (Threshold eşikleri belirlenerek skorlama ölçeklendirilecek)  
 
-### 3. Kullanıcı Arayüzü Geliştirmeleri
+### 2. Kullanıcı Arayüzü Geliştirmeleri
 <img src="https://github.com/user-attachments/assets/4d33074c-f840-4495-b496-090b24e3d3eb" width="300" />
 
 <img src="https://github.com/user-attachments/assets/e9d261a3-5381-491f-869b-c92dc2c2fa0f" width="300" />
@@ -357,17 +390,7 @@ Sprint 2 boyunca geliştirilen kullanıcı arayüzü tasarımları ve test sonu�
 <summary>📈 Sprint Review</summary>
 
 ## Sprint 2'de Yapılan İşler
-<img width="895" height="737" alt="image" src="https://github.com/user-attachments/assets/bed4fcd2-2b62-43ba-b561-6815a5e8ce9b" />
 
-*Sprint 2 Backlog Items Ekran Görüntüsü*
-<img width="1369" height="573" alt="image" src="https://github.com/user-attachments/assets/04f3b9ad-1c7e-4962-9ca1-29805f12a31c" />
-
-*Sprint 2 Sprint Board Ekran Görüntüsü*
-
-
-<img width="1859" height="704" alt="image" src="https://github.com/user-attachments/assets/7b3a72ae-9f11-44b8-b1d8-91191c4034c8" />
-
-*Sprint 2 Sprint Dashboard Ekran Görüntüsü*
 
 ### ✅ Başarıyla Tamamlanan Görevler:
 
@@ -390,6 +413,9 @@ Sprint 2 boyunca geliştirilen kullanıcı arayüzü tasarımları ve test sonu�
 - ✅ MediaPipe UI entegrasyonu testi
 - ✅ Figma/Rocket.new deneyimi
 - ✅ UX/UI testleri
+  
+#### Yapay Zeka
+- ✅ Feedback mekanizması (3000 - 0 arası puanlama)
 
 ### 🔄 Devam Eden Görevler:
 
@@ -401,14 +427,7 @@ Sprint 2 boyunca geliştirilen kullanıcı arayüzü tasarımları ve test sonu�
 #### Yapay Zeka Optimizasyonu 
 - 🔄 Pose estimation algoritması iyileştirmesi
 - 🔄 Gerçek zamanlı tahmin sistemi kurulumu
-- ❌ Feedback mekanizması (Sprint 3'e ertelendi)
 
-### Sprint Katılımcıları:
-- **Meltem Kartopu** (Scrum Master) - Aktif
-- **Berke Sinan Yetkin** (Developer) - Aktif  
-- **Ahmet Reşat Keyan** (Product Owner) - Aktif
-- **Esra Öden** (Developer) - Aktif
-- **Mehmet Emin Şahin** (Developer) - Aktif
 
 </details>
 
@@ -440,7 +459,7 @@ Sprint 2 boyunca geliştirilen kullanıcı arayüzü tasarımları ve test sonu�
 4. **Kullanıcı testleri** için pilot grup oluşturulacak
 
 ### 📊 Sprint Başarı Metrikleri:
-- **Genel Tamamlanma:** %68 (68/100 puan)
+- **Genel Tamamlanma:** %74 (74/100 puan)
 - **Takım Katılımı:** %100 (tüm üyeler aktif)
 - **Kod Kalitesi:** Yüksek (code review süreçleri takip edildi)
 - **Dokümantasyon:** İyi (README ve commit mesajları düzenli)
@@ -468,7 +487,7 @@ Sprint 2 boyunca geliştirilen kullanıcı arayüzü tasarımları ve test sonu�
 ### Sprint 3 Odak Alanları:
 
 #### 🔧 Backend & Entegrasyon (30 puan)
-- REST API geliştirme
+- Websocket geliştirme
 - Model deployment
 - Flutter-Backend entegrasyonu
 - Real-time işleme optimizasyonu
