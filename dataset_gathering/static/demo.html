@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 AI Pose Detection - Live Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .video-section {
+            text-align: center;
+        }
+
+        #videoElement {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .controls {
+            margin: 20px 0;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
+            color: white;
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+            color: white;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .analysis-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .status-connected { background: #28a745; }
+        .status-disconnected { background: #dc3545; }
+        .status-connecting { background: #ffc107; }
+
+        .pose-info {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .score-display {
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .score-excellent { background: #d4edda; color: #155724; }
+        .score-good { background: #fff3cd; color: #856404; }
+        .score-poor { background: #f8d7da; color: #721c24; }
+
+        .angles-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .angle-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .angle-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .exercise-selector {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        select {
+            padding: 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            background: white;
+            min-width: 200px;
+        }
+
+        .feedback-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .feedback-positive { background: #d4edda; color: #155724; }
+        .feedback-negative { background: #f8d7da; color: #721c24; }
+        .feedback-neutral { background: #e2e3e5; color: #383d41; }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI Pose Detection</h1>
+            <p>Real-time duruş analizi ve geri bildirim sistemi</p>
+        </div>
+
+        <div class="main-content">
+            <!-- Video Section -->
+            <div class="video-section">
+                <video id="videoElement" autoplay muted playsinline></video>
+
+                <div class="controls">
+                    <button id="startBtn" class="btn-primary">📹 Kamerayı Başlat</button>
+                    <button id="connectBtn" class="btn-success" disabled>🔗 AI'ya Bağlan</button>
+                    <button id="stopBtn" class="btn-danger" disabled>⏹️ Durdur</button>
+                </div>
+
+                <div class="exercise-selector">
+                    <label for="exerciseType">Egzersiz Türü:</label>
+                    <select id="exerciseType">
+                        <option value="sitting">🪑 Oturma Duruşu</option>
+                        <option value="squat">🏋️ Squat Analizi</option>
+                        <option value="standing">🧍 Ayakta Duruş</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Analysis Section -->
+            <div class="analysis-section">
+                <h2>📊 Analiz Sonuçları</h2>
+
+                <div class="pose-info">
+                    <h3>
+                        <span id="connectionStatus" class="status-indicator status-disconnected"></span>
+                        Bağlantı Durumu
+                    </h3>
+                    <p id="connectionText">Bağlantı bekleniyor...</p>
+                </div>
+
+                <div id="scoreDisplay" class="score-display score-poor">
+                    <div>Skor: <span id="scoreValue">0</span>/100</div>
+                </div>
+
+                <div class="pose-info">
+                    <h3>🎯 Duruş Durumu</h3>
+                    <p id="poseStatus">Pose tespit edilmedi</p>
+                </div>
+
+                <div id="feedbackSection" class="feedback-text feedback-neutral">
+                    <strong>💡 Geri Bildirim:</strong>
+                    <div id="feedbackText">Kamerayı başlatın ve AI analizine bağlanın</div>
+                </div>
+
+                <div class="angles-display" id="anglesDisplay">
+                    <!-- Açı değerleri buraya gelecek -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class PoseDetectionDemo {
+            constructor() {
+                this.video = document.getElementById('videoElement');
+                this.socket = null;
+                this.isStreaming = false;
+                this.canvas = document.createElement('canvas');
+                this.ctx = this.canvas.getContext('2d');
+
+                this.setupEventListeners();
+            }
+
+            setupEventListeners() {
+                document.getElementById('startBtn').addEventListener('click', () => this.startCamera());
+                document.getElementById('connectBtn').addEventListener('click', () => this.connectToAI());
+                document.getElementById('stopBtn').addEventListener('click', () => this.stopAll());
+            }
+
+            async startCamera() {
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({
+                        video: { width: 640, height: 480 }
+                    });
+
+                    this.video.srcObject = stream;
+
+                    this.video.onloadedmetadata = () => {
+                        this.canvas.width = this.video.videoWidth;
+                        this.canvas.height = this.video.videoHeight;
+                    };
+
+                    document.getElementById('startBtn').disabled = true;
+                    document.getElementById('connectBtn').disabled = false;
+
+                    this.updateStatus('Kamera başlatıldı! AI bağlantısı için "AI\'ya Bağlan" butonuna tıklayın.');
+
+                } catch (error) {
+                    alert('Kamera erişimi reddedildi: ' + error.message);
+                    console.error('Kamera hatası:', error);
+                }
+            }
+
+            connectToAI() {
+                const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+                const wsUrl = `${protocol}//${window.location.host}/ws/pose-analysis`;
+
+                this.socket = new WebSocket(wsUrl);
+
+                this.socket.onopen = () => {
+                    console.log('WebSocket bağlantısı açıldı');
+                    this.updateConnectionStatus('connected', 'AI analizine bağlandı ✅');
+                    document.getElementById('connectBtn').disabled = true;
+                    document.getElementById('stopBtn').disabled = false;
+                    this.startAnalysis();
+                };
+
+                this.socket.onmessage = (event) => {
+                    const data = JSON.parse(event.data);
+                    this.handleAnalysisResult(data);
+                };
+
+                this.socket.onclose = () => {
+                    console.log('WebSocket bağlantısı kapandı');
+                    this.updateConnectionStatus('disconnected', 'Bağlantı kesildi ❌');
+                    this.stopAnalysis();
+                };
+
+                this.socket.onerror = (error) => {
+                    console.error('WebSocket hatası:', error);
+                    this.updateConnectionStatus('disconnected', 'Bağlantı hatası ❌');
+                };
+
+                this.updateConnectionStatus('connecting', 'AI\'ya bağlanıyor... ⏳');
+            }
+
+            startAnalysis() {
+                this.isStreaming = true;
+                this.sendFrame();
+            }
+
+            sendFrame() {
+                if (!this.isStreaming || !this.socket || this.socket.readyState !== WebSocket.OPEN) {
+                    return;
+                }
+
+                // Video frame'i canvas'a çiz
+                this.ctx.drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height);
+
+                // Canvas'ı base64'e çevir
+                const imageData = this.canvas.toDataURL('image/jpeg', 0.8);
+
+                // AI'ya gönder
+                const message = {
+                    type: 'frame',
+                    image: imageData,
+                    exercise_type: document.getElementById('exerciseType').value
+                };
+
+                this.socket.send(JSON.stringify(message));
+
+                // 100ms sonra bir sonraki frame'i gönder (10 FPS)
+                setTimeout(() => this.sendFrame(), 100);
+            }
+
+            handleAnalysisResult(data) {
+                if (data.type === 'analysis_result') {
+                    const result = data.data;
+
+                    // Skor güncelle
+                    this.updateScore(result.score);
+
+                    // Pose durumu güncelle
+                    document.getElementById('poseStatus').textContent =
+                        result.pose_detected ?
+                        (result.is_correct ? '✅ Doğru duruş' : '⚠️ Düzeltme gerekli') :
+                        '❌ Pose tespit edilemedi';
+
+                    // Feedback güncelle
+                    this.updateFeedback(result.feedback, result.is_correct);
+
+                    // Açıları göster
+                    this.updateAngles(result.angles);
+
+                } else if (data.type === 'error') {
+                    console.error('Analiz hatası:', data.message);
+                }
+            }
+
+            updateScore(score) {
+                const scoreValue = Math.round(score);
+                document.getElementById('scoreValue').textContent = scoreValue;
+
+                const scoreDisplay = document.getElementById('scoreDisplay');
+                scoreDisplay.className = 'score-display ';
+
+                if (scoreValue >= 80) {
+                    scoreDisplay.className += 'score-excellent';
+                } else if (scoreValue >= 60) {
+                    scoreDisplay.className += 'score-good';
+                } else {
+                    scoreDisplay.className += 'score-poor';
+                }
+            }
+
+            updateFeedback(feedback, isCorrect) {
+                const feedbackText = document.getElementById('feedbackText');
+                const feedbackSection = document.getElementById('feedbackSection');
+
+                feedbackText.textContent = feedback;
+
+                feedbackSection.className = 'feedback-text ';
+                if (isCorrect) {
+                    feedbackSection.className += 'feedback-positive';
+                } else if (feedback.includes('tespit edilemedi')) {
+                    feedbackSection.className += 'feedback-neutral';
+                } else {
+                    feedbackSection.className += 'feedback-negative';
+                }
+            }
+
+            updateAngles(angles) {
+                const anglesDisplay = document.getElementById('anglesDisplay');
+                anglesDisplay.innerHTML = '';
+
+                Object.entries(angles).forEach(([key, value]) => {
+                    if (key !== 'selected_side' && typeof value === 'number') {
+                        const angleItem = document.createElement('div');
+                        angleItem.className = 'angle-item';
+                        angleItem.innerHTML = `
+                            <div class="angle-value">${value.toFixed(1)}°</div>
+                            <div>${this.getAngleName(key)}</div>
+                        `;
+                        anglesDisplay.appendChild(angleItem);
+                    }
+                });
+            }
+
+            getAngleName(key) {
+                const names = {
+                    shoulder: 'Omuz',
+                    hip: 'Kalça',
+                    ankle: 'Ayak Bileği',
+                    knee: 'Diz'
+                };
+                return names[key] || key;
+            }
+
+            updateConnectionStatus(status, text) {
+                const indicator = document.getElementById('connectionStatus');
+                const connectionText = document.getElementById('connectionText');
+
+                indicator.className = `status-indicator status-${status}`;
+                connectionText.textContent = text;
+            }
+
+            updateStatus(message) {
+                document.getElementById('connectionText').textContent = message;
+            }
+
+            stopAnalysis() {
+                this.isStreaming = false;
+            }
+
+            stopAll() {
+                this.stopAnalysis();
+
+                if (this.socket) {
+                    this.socket.close();
+                    this.socket = null;
+                }
+
+                if (this.video.srcObject) {
+                    this.video.srcObject.getTracks().forEach(track => track.stop());
+                    this.video.srcObject = null;
+                }
+
+                document.getElementById('startBtn').disabled = false;
+                document.getElementById('connectBtn').disabled = true;
+                document.getElementById('stopBtn').disabled = true;
+
+                this.updateConnectionStatus('disconnected', 'Bağlantı kesildi');
+                this.updateStatus('Sistem durduruldu');
+            }
+        }
+
+        // Sayfa yüklendiğinde demo'yu başlat
+        document.addEventListener('DOMContentLoaded', () => {
+            new PoseDetectionDemo();
+        });
+    </script>
+</body>
+</html>
