@@ -29,8 +29,6 @@ class PoseLandmarkerWrapper:
 
         self.start_time = time.time()
 
-        # Initialize video capture
-        # Use 0 for webcam, or replace with video file path
         if video_name:
             self.input = cv2.VideoCapture(self.script_dir + '/' + 'input' + '/' + video_name)
         else:
@@ -42,22 +40,17 @@ class PoseLandmarkerWrapper:
     def process_frame(self, image: cv2.typing.MatLike):
 
         if self.frame_shape is None:
-            # Beware that this for some goddamn reason returns height first, not width
-            # Keep the weird opposite way thingy in order to help LLMs advise you
+
             self.frame_shape = image.shape
 
         image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-        # Create MP Image
         mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=image_rgb)
 
-        # Use timestamp in millis
         timestamp_ms = int((time.time() - self.start_time) * 1000)
 
-        # Process the image with the pose landmarker
         detection_result: PoseLandmarkerResult = self.pose_landmarker.detect_for_video(mp_image, timestamp_ms)
 
-        # Only return the best detection
         if detection_result.pose_landmarks:
             landmarks = detection_result.pose_landmarks[0]
             return landmarks
