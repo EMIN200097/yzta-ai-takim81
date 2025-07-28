@@ -35,7 +35,10 @@ class PoseLandmarkerWrapper:
 
         self.start_time = time.time()
 
+<<<<<<< HEAD
         # Initialize video capture
+=======
+>>>>>>> 6f3707d2240cb1968d9495b496be1e949545e491
         if video_name:
             video_path = self.script_dir + '/' + 'input' + '/' + video_name
             print(f" Video dosyası yükleniyor: {video_path}")
@@ -55,12 +58,24 @@ class PoseLandmarkerWrapper:
 
     def process_frame(self, image: cv2.typing.MatLike):
         if self.frame_shape is None:
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6f3707d2240cb1968d9495b496be1e949545e491
             self.frame_shape = image.shape
             print(f"📐 Frame boyutu: {self.frame_shape}")
 
         image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+<<<<<<< HEAD
         mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=image_rgb)
         timestamp_ms = int((time.time() - self.start_time) * 1000)
+=======
+
+        mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=image_rgb)
+
+        timestamp_ms = int((time.time() - self.start_time) * 1000)
+
+>>>>>>> 6f3707d2240cb1968d9495b496be1e949545e491
         detection_result: PoseLandmarkerResult = self.pose_landmarker.detect_for_video(mp_image, timestamp_ms)
 
         if detection_result.pose_landmarks:
