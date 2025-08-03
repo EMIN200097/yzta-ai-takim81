@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 
-import 'camera.dart';
+import 'sitting.dart';
 import 'home.dart';
 
 void main() async {

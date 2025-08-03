@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'camera.dart';
+import 'sitting.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:camera/camera.dart';
 
@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final TextEditingController ipController = TextEditingController(text: "10.0.2.2:8765");
+  final TextEditingController ipController = TextEditingController(text: "localhost:8765");
   CameraController? _cameraController;
   bool _cameraInitialized = false;
 
@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
     await _requestCameraPermission();
     cameras = await availableCameras();
     final controller = CameraController(
-      cameras[0],
+      cameras[1],
       ResolutionPreset.low,
       imageFormatGroup: ImageFormatGroup.yuv420,
     );
@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => CameraStreamPage(
+                    builder: (context) => SittingPage(
                       cameraController: _cameraController!,
                       ip: ipController.text,
                     ),
