@@ -897,7 +897,10 @@ Posecore projesi, fizyoterapi ve wellness alanında gerçek bir ihtiyaca cevap v
 <img width="309" height="688" alt="image" src="https://github.com/user-attachments/assets/e05e7e22-136b-4172-b0a9-fa224f2129ea" />
 <img width="318" height="690" alt="image" src="https://github.com/user-attachments/assets/c28bc74a-e5f7-4595-8169-42b04aa79932" />
 
-[Gelecekte geliştireceğimiz uygulama arayüzümüze göz atmak için buraya tıkla](https://flutlab.io/editor/34770b03-de16-416c-aa0f-f36b6a128db5)
+[Gelecekte geliştireceğimiz uygulama Önizlememize bakmak için tıkla](https://preview.flutlab.io/meltem_kartopu/posecoreyesilui/)
+
+
+[Gelecekte geliştireceğimiz uygulama arayüzümüze ait kodlara göz atmak için buraya tıkla](https://flutlab.io/editor/34770b03-de16-416c-aa0f-f36b6a128db5)
 
 
 
