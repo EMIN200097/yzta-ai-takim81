@@ -659,6 +659,10 @@ Sprint 3 görev dağılımı, ilerleme durumu ve proje yönetimi paneli ile taki
 - ✅ Oturma pozisyonu düzeltme uyarıları
 - ✅ Threshold tabanlı uyarı mekanizması
 
+  
+
+https://github.com/user-attachments/assets/d547efed-b379-4241-8038-0d83e843e1e8
+
 *Model ses uyarı sistemi çalışır halde demonstrasyonu*
 
 #### 2. Backend-Frontend Entegrasyon Çalışmaları
@@ -884,6 +888,21 @@ Sprint 3 görev dağılımı, ilerleme durumu ve proje yönetimi paneli ile taki
 
 #### Gelecek Potansiyeli:
 Posecore projesi, fizyoterapi ve wellness alanında gerçek bir ihtiyaca cevap veren, teknik olarak uygulanabilir bir çözüm olarak geliştirilmiştir. Bootcamp sonrasında da geliştirilmeye devam edilebilecek bir proje yapısına sahiptir.
+
+#### Geleceğe Dönük Geliştirmeler:
+- **Uygulama arayüzü iyileştirmeleri**
+- **Yeni egzersizlerin eklenmesi**
+- **Kullanıcı verileriyle kendini eğiten yapı** 
+<img width="315" height="684" alt="image" src="https://github.com/user-attachments/assets/e61e105f-c397-49c3-9aca-d1b1cacc9d9f" />
+<img width="309" height="688" alt="image" src="https://github.com/user-attachments/assets/e05e7e22-136b-4172-b0a9-fa224f2129ea" />
+<img width="318" height="690" alt="image" src="https://github.com/user-attachments/assets/c28bc74a-e5f7-4595-8169-42b04aa79932" />
+
+[Gelecekte geliştireceğimiz uygulama arayüzümüze göz atmak için buraya tıkla](https://flutlab.io/editor/34770b03-de16-416c-aa0f-f36b6a128db5)
+
+
+
+
+
 
 </details>
 
