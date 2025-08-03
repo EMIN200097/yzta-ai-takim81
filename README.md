@@ -632,12 +632,12 @@ Sprint 3 görev dağılımı, ilerleme durumu ve proje yönetimi paneli ile taki
 ### Sprint Board Ekran Görüntüleri:
 
 #### Sprint 3 Backlog Items:
-![Sprint 3 Backlog]()<img width="976" height="700" alt="Ekran görüntüsü 2025-08-03 213318" src="https://github.com/user-attachments/assets/7dec5d2a-33d6-4225-abba-ef542611aa3b" />
+<img width="976" height="700" alt="Ekran görüntüsü 2025-08-03 213318" src="https://github.com/user-attachments/assets/7dec5d2a-33d6-4225-abba-ef542611aa3b" />
 
 *Sprint 3 Backlog Items Ekran Görüntüsü*
 
 #### Sprint 3 Sprint Board:
-![Sprint 3 Board]()<img width="1244" height="643" alt="Ekran görüntüsü 2025-08-03 213414" src="https://github.com/user-attachments/assets/e52d0a29-50e1-41ab-b0fa-f98c2756f821" />
+<img width="1244" height="643" alt="Ekran görüntüsü 2025-08-03 213414" src="https://github.com/user-attachments/assets/e52d0a29-50e1-41ab-b0fa-f98c2756f821" />
 
 *Sprint 3 Sprint Board Ekran Görüntüsü*
 
