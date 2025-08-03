@@ -513,3 +513,384 @@ Sprint 2 boyunca geliştirilen kullanıcı arayüzü tasarımları ve test sonu�
 **Toplam Sprint 3 Hedefi:** 100 puan
 
 </details>
+</details>
+
+## Sprint 3 (21 Temmuz - 3 Ağustos 2025)
+<details>
+<summary>Tıklayarak Detayları Göster/Gizle</summary>
+
+**Sprint Süresi:** 2 hafta  
+**Takım:** Posecore Team  
+
+---
+
+<details>
+<summary>📊 Sprint 3 Özet</summary>
+
+### Sprint Hedefleri
+
+Sprint 3'te ana hedefimiz, Sprint 2'de geliştirdiğimiz modelleri entegre etmek, backend-frontend bağlantısını kurmak ve kullanıcı testleri için hazır bir prototip oluşturmaktı.
+
+**Hedef Sprint Puanı:** 100/300  
+**Gerçekleşen Sprint Puanı:** 78/100 (%78)
+
+</details>
+
+---
+
+<details>
+<summary>🎯 Sprint Notları</summary>
+
+### Sprint Katılımcıları:
+- **Meltem Kartopu** (Scrum Master) - Aktif
+- **Berke Sinan Yetkin** (Developer) - Aktif  
+- **Ahmet Reşat Keyan** (Product Owner) - Aktif
+- **Esra Öden** (Developer) - Aktif
+- **Mehmet Emin Şahin** (Developer) - Aktif
+
+### Sprint İçinde Tamamlanması Tahmin Edilen Puan
+**100 puan** - Sprint 2'den devredilen 21 puan + yeni hedeflenen 79 puan = 100 puan toplam
+
+### Tahmin Mantığı
+Sprint 3'te ana odak noktaları:
+- Backend & Entegrasyon çalışmaları (35 puan)
+- Test & Doğrulama süreçleri (25 puan)
+- Kullanıcı Deneyimi iyileştirmeleri (20 puan)
+- Production hazırlık çalışmaları (20 puan)
+
+**Toplam:** 100 puan hedeflenmiş, 78 puan başarıyla tamamlanmıştır.
+
+### Sprint Puanlama Sistemi ve Görev Dağılımı
+
+#### Kategori Bazlı Puanlama Tablosu
+
+| Kategori | Hedef Puan | Tamamlanan Puan | Tamamlanma (%) | Rol Dağılımı |
+|----------|------------|-----------------|----------------|---------------|
+| **Backend & Entegrasyon** | 35 | 28 | 80% | Berke (Dev), Mehmet Emin (Dev) |
+| **Test & Doğrulama** | 25 | 18 | 72% | Tüm Takım |
+| **Kullanıcı Deneyimi** | 20 | 16 | 80% | Ahmet (PO), Esra (Dev), Meltem (SM) |
+| **Production Hazırlık** | 20 | 16 | 80% | Tüm Takım |
+| **TOPLAM** | **100** | **78** | **78%** | **Tüm Takım** |
+
+</details>
+
+---
+
+<details>
+<summary>💬 Daily Scrum</summary>
+
+### Daily Scrum Süreci
+
+**Zaman:** Her akşam 19:30-23:00 arası  
+**Kanallar:** WhatsApp grup mesajları, Google Meet toplantıları  
+**Sıklık:** Günlük WhatsApp güncellemeleri, özellikle proje teslim yaklaştıkça yoğun iletişim
+
+### WhatsApp Daily Scrum Konuşmaları
+Sprint 3 boyunca takım üyeleri arasında gerçekleşen yoğun günlük iletişim ve proje güncellemeleri. Özellikle son haftada proje teslimi yaklaştıkça iletişim sıklığı artmıştır.
+
+[📱 WhatsApp Daily Scrum Ekran Görüntüleri](https://imgur.com/a/CHJ9yM9)
+
+### Ana İletişim Konuları:
+- Backend-Frontend entegrasyon zorlukları
+- WebRTC ve gRPC protokol geçişi araştırmaları
+- Model optimizasyonu ve uyarı sistemi geliştirmeleri
+- Flutter uygulama kamera entegrasyon sorunları
+- Proje video hazırlığı ve teslim koordinasyonu
+- Son dakika hata çözümleri ve optimizasyonlar
+
+### Toplantı Tarihleri:
+- **22 Temmuz:** Entegrasyon sorunları ve çözüm önerileri
+- **27 Temmuz:** Acil sprint planlama ve görev dağılımı
+- **30 Temmuz:** Geliştirme çalışmaları ve koordinasyon
+- **1-2 Ağustos:** Yoğun geliştirme ve son testler
+
+</details>
+
+---
+
+<details>
+<summary>📋 Sprint Board Updates</summary>
+
+### ClickUp Sprint Board
+
+Sprint 3 görev dağılımı, ilerleme durumu ve proje yönetimi paneli ile takip edilmiştir.
+
+[📊 ClickUp Sprint 3 Board](https://app.clickup.com/90181399415/v/b/6-901809372442-2)
+
+### Sprint Burndown:
+- Başlangıç: 100 puan
+- Tamamlanan: 78 puan
+- Kalan: 22 puan (proje teslimi sonrası iyileştirmeler için not alındı)
+
+### Kritik Görevler:
+- ✅ Model uyarı sistemi entegrasyonu
+- ✅ Flutter uygulama kamera optimizasyonu
+- 🔄 WebRTC/gRPC protokol geçişi (kısmi tamamlandı)
+- ✅ Veri seti hazırlama ve test
+- ✅ Proje video hazırlığı
+
+### Sprint Board Ekran Görüntüleri:
+
+#### Sprint 3 Backlog Items:
+![Sprint 3 Backlog](SPRINT_3_BACKLOG_GORUNTU_BURAYA)
+
+*Sprint 3 Backlog Items Ekran Görüntüsü*
+
+#### Sprint 3 Sprint Board:
+![Sprint 3 Board](SPRINT_3_BOARD_GORUNTU_BURAYA)
+
+*Sprint 3 Sprint Board Ekran Görüntüsü*
+
+#### Sprint 3 Dashboard:
+![Sprint 3 Dashboard](SPRINT_3_DASHBOARD_GORUNTU_BURAYA)
+
+*Sprint 3 Sprint Dashboard Ekran Görüntüsü*
+
+</details>
+
+---
+
+<details>
+<summary>🖥️ Ürün Durumu</summary>
+
+### Sprint 3 Geliştirme Çıktıları
+
+#### 1. Model İyileştirmeleri ve Uyarı Sistemi
+
+**Squat ve Oturma Modeli Ses Uyarı Sistemi:**
+- ✅ Real-time ses geri bildirimi eklendi
+- ✅ Squat pozisyonu için sesli uyarı sistemi
+- ✅ Oturma pozisyonu düzeltme uyarıları
+- ✅ Threshold tabanlı uyarı mekanizması
+
+*Model ses uyarı sistemi çalışır halde demonstrasyonu*
+
+#### 2. Backend-Frontend Entegrasyon Çalışmaları
+
+**Teknik Zorluklar ve Çözümler:**
+- 🔄 WebRTC protokolü araştırması yapıldı
+- 🔄 gRPC entegrasyon testleri gerçekleştirildi
+- ⚠️ Flutter-Backend bağlantı sorunları kısmen çözüldü
+- ✅ FastAPI websocket sistemi kuruldu
+
+**Entegrasyon Mimarisi:**
+```
+[Backend API] ←→ [WebSocket] ←→ [Flutter App] ←→ [Camera Feed]
+```
+
+#### 3. Flutter Mobil Uygulama Güncellemeleri
+
+**Kamera ve Performans İyileştirmeleri:**
+- ✅ Android emülatör uyumluluğu sağlandı
+- ⚠️ iOS uyumluluğu henüz test edilmedi
+- ✅ Kamera permission yönetimi eklendi
+- ✅ Real-time görüntü işleme optimizasyonu
+
+#### 4. Veri Seti ve Model Eğitimi
+
+**Veri Toplama Çalışmaları:**
+- ✅ YouTube videolarından veri çıkarma sistemi
+- ✅ Doğru/yanlış hareket etiketleme
+- ✅ CSV export ve landmark data işleme
+- ✅ Mediapipe entegrasyon optimizasyonu
+
+</details>
+
+---
+
+<details>
+<summary>🧪 Test & Doğrulama</summary>
+
+### Kullanıcı Testleri ve Sistem Doğrulaması
+
+#### Teknik Testler:
+- **Android Uyumluluğu:** ✅ Başarılı (Xiaomi Note 11 test edildi)
+- **Emülatör Testi:** ✅ Android Studio emülatöründe çalışıyor
+- **iOS Uyumluluğu:** ❌ Test edilemedi (cihaz kısıtı)
+- **Kamera Performansı:** ✅ Real-time işleme başarılı
+
+#### Model Performans Testleri:
+- **Squat Algılama Doğruluğu:** ~85%
+- **Oturma Pozisyonu Tespiti:** ~80%
+- **Ses Uyarı Tepki Süresi:** <1 saniye
+- **Real-time İşleme Hızı:** 30 FPS
+
+#### Kullanıcı Deneyimi Testleri:
+- ✅ Kolay kurulum ve başlatma
+- ✅ Anlaşılır ses geri bildirimleri
+- ⚠️ Kamera pozisyonlama rehberi geliştirilmeli
+- ✅ Kullanıcı arayüzü sezgisel
+
+</details>
+
+---
+
+<details>
+<summary>📈 Sprint Review</summary>
+
+### Sprint 3'te Yapılan İşler
+
+#### ✅ Başarıyla Tamamlanan Görevler:
+
+**Backend & Entegrasyon (28/35 puan)**
+- ✅ FastAPI websocket sistemi kurulumu
+- ✅ Model API endpoint'lerinin oluşturulması
+- ✅ Real-time veri iletişimi testi
+- 🔄 WebRTC/gRPC protokol araştırması (devam ediyor)
+
+**Model Geliştirme**
+- ✅ Squat modeli ses uyarı sistemi entegrasyonu
+- ✅ Oturma pozisyonu uyarı mekanizması
+- ✅ Threshold optimizasyonu
+- ✅ Performance tuning
+
+**Frontend Geliştirme (16/20 puan)**
+- ✅ Flutter kamera entegrasyon iyileştirmeleri
+- ✅ Android uyumluluk sağlanması
+- ✅ Permission management sistemi
+- ✅ UI/UX küçük iyileştirmeler
+
+**Veri İşleme (18/25 puan)**
+- ✅ YouTube video işleme pipeline
+- ✅ Otomatik veri etiketleme sistemi
+- ✅ CSV export optimize edilmesi
+- ✅ Landmark data validation
+
+#### 🔄 Devam Eden Görevler:
+
+**Entegrasyon Zorlukları**
+- 🔄 WebRTC full implementasyonu
+- 🔄 iOS uyumluluk testleri
+- 🔄 Cross-platform optimizasyon
+
+**Performans İyileştirmeleri**
+- 🔄 Model accuracy artırma çalışmaları
+- 🔄 Latency azaltma optimizasyonları
+
+</details>
+
+---
+
+<details>
+<summary>🔄 Sprint Retrospective</summary>
+
+### Bu Sprintte Yaptığımız En İyi Şeyler
+
+#### 👍 Başarılı Yönler:
+- **Entegrasyon İlerlemi:** Backend-Frontend bağlantısında önemli adımlar atıldı
+- **Model Fonksiyonalitesi:** Ses uyarı sistemi başarıyla entegre edildi
+- **Problem Çözme:** Teknik zorluklar karşısında alternatif çözümler bulundu
+- **Takım Koordinasyonu:** Yoğun sprint döneminde etkili iletişim sağlandı
+- **Adaptasyon:** WebRTC/gRPC gibi yeni teknolojilere hızlı adaptasyon
+- **Son Dönem Motivasyonu:** Proje teslim tarihi yaklaştıkça takım performansı arttı
+
+#### 📌 Karşılaşılan Zorluklar:
+- **Entegrasyon Karmaşıklığı:** Backend-Frontend bağlantısı beklediğimizden zorlu çıktı
+- **Protokol Geçişi:** WebRTC ve gRPC implementasyonu zaman aldı
+- **Platform Uyumluluğu:** iOS test imkanı bulunamadı
+- **Zaman Baskısı:** Sprint son haftasında yoğun çalışma temposu
+- **Teknik Debt:** Hızlı geliştirme sürecinde kod kalitesi ikinci planda kaldı
+
+#### 🛠️ Teknik Öğrenimler:
+- **WebRTC:** Real-time communication protokollerinde deneyim kazanıldı
+- **gRPC:** High-performance RPC framework kullanımı öğrenildi
+- **Flutter:** Cross-platform development zorlukları deneyimlendi
+- **Model Deployment:** Production ortamında model entegrasyonu deneyimi
+- **Real-time Processing:** Canlı video işleme optimizasyon teknikleri
+
+#### 🎯 Gelecek İyileştirmeler İçin Notlar:
+1. **Protokol Seçimi:** Başlangıçta daha kapsamlı araştırma yapılmalı
+2. **Platform Testleri:** Farklı cihazlar için test stratejisi geliştirilmeli
+3. **Entegrasyon Planlaması:** Backend-Frontend entegrasyonu için daha fazla zaman ayrılmalı
+4. **Documentation:** Teknik dokümantasyon sürekli güncel tutulmalı
+5. **Code Quality:** Hızlı geliştirme sürecinde kod kalitesi standartları korunmalı
+
+#### 📊 Sprint Başarı Metrikleri:
+- **Genel Tamamlanma:** %78 (78/100 puan)
+- **Takım Katılımı:** %100 (tüm üyeler aktif katılım)
+- **Kod Kalitesi:** Orta (hızlı geliştirme sebebiyle)
+- **Entegrasyon Başarısı:** %70 (kısmi başarı, geliştirme devam ediyor)
+- **Kullanıcı Deneyimi:** %80 (temel işlevsellik çalışıyor)
+
+</details>
+
+---
+
+<details>
+<summary>🎬 Proje Teslimi</summary>
+
+### Proje Video ve Dokümantasyon
+
+#### Proje Tanıtım Videosu Hazırlığı:
+- **Video Süresi:** Maksimum 2 dakika
+- **İçerik:** Uygulama demo, model çalışması, ses uyarı sistemi
+- **Platform:** YouTube (Public/Unlisted)
+- **Gösterilecek Özellikler:**
+  - Real-time postür analizi
+  - Squat ve oturma pozisyonu tespiti
+  - Ses uyarı sistemi demonstrasyonu
+  - Flutter mobil arayüz kullanımı
+
+#### GitHub Repository Durumu:
+- ✅ Kod tabanı güncel ve dokümante
+- ✅ README.md comprehensive format
+- ✅ Sprint raporları eksiksiz
+- ✅ Model dosyaları ve veri setleri organize
+- ✅ Kurulum ve kullanım kılavuzu hazır
+
+#### Final Proje Çıktıları:
+- **Çalışan Prototype:** Android platformunda test edilmiş
+- **Model Accuracy:** Squat %85, Oturma Pozisyonu %80
+- **Real-time Performance:** 30 FPS stabil işleme
+- **User Experience:** Ses geri bildirimli postür düzeltme sistemi
+- **Demo Video:** Proje özellikleri ve kullanımı
+
+#### Bootcamp Teslim Kriterleri:
+- ✅ 2 dakikalık tanıtım videosu hazır
+- ✅ GitHub repository eksiksiz
+- ✅ Çalışan prototype demo
+- ✅ Teknik dokümantasyon tamamlandı
+- ✅ Sprint raporları ve proje yönetimi
+
+</details>
+
+---
+
+<details>
+<summary>🚀 Proje Sonuç Değerlendirmesi</summary>
+
+### Genel Proje Başarı Analizi
+
+#### Toplam Proje İstatistikleri:
+- **Toplam Sprint Sayısı:** 3
+- **Toplam Hedeflenen Puan:** 300
+- **Toplam Gerçekleşen Puan:** 252 (%84)
+- **Proje Süresi:** 6 hafta
+- **Takım Büyüklüğü:** 5 kişi
+
+#### Sprint Bazında Performans:
+- **Sprint 1:** 50/50 puan (%100)
+- **Sprint 2:** 74/100 puan (%74)
+- **Sprint 3:** 78/100 puan (%78)
+
+#### Teknik Başarılar:
+- ✅ MediaPipe entegrasyonu başarıyla tamamlandı
+- ✅ Real-time video processing implementasyonu
+- ✅ Flutter cross-platform mobile uygulama
+- ✅ Ses uyarı sistemi entegrasyonu
+- ✅ Machine learning model deployment
+
+#### Öğrenimler ve Deneyimler:
+- **Takım Çalışması:** Uzaktan çalışma koordinasyonu
+- **Teknoloji Yığını:** Modern AI/ML araçları kullanımı
+- **Proje Yönetimi:** Agile/Scrum metodolojisi uygulaması
+- **Problem Çözme:** Teknik zorluklar karşısında adaptasyon
+
+#### Gelecek Potansiyeli:
+Posecore projesi, fizyoterapi ve wellness alanında gerçek bir ihtiyaca cevap veren, teknik olarak uygulanabilir bir çözüm olarak geliştirilmiştir. Bootcamp sonrasında da geliştirilmeye devam edilebilecek bir proje yapısına sahiptir.
+
+</details>
+
+</details>
+
+
